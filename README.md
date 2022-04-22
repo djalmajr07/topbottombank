@@ -166,11 +166,12 @@ Creation of variables (features) relevant to solving the problem
 
 4. How does the model perform in classifying customers as churns?
 
-    - With a sample of 1593 customers, this model can correctly classify 1496 representing 88% of accuracy.
+    - With a sample of 1593 customers, this model can correctly classify 1496 representing 88% of assertiveness.
 
-           CatBoost Accuracy = 0.91
+     CatBoost Accuracy = 0.91
            
-           ![image](https://user-images.githubusercontent.com/85264359/164581465-7e044927-e5d1-4c4d-bd2d-17502459efdd.png)
+           
+     ![image](https://user-images.githubusercontent.com/85264359/164581465-7e044927-e5d1-4c4d-bd2d-17502459efdd.png)
 
 5. What is the bank's profit with this customer?
    - On average the amount the bank earns is $18,761.21 by clients.
