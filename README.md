@@ -24,7 +24,7 @@ As a result for this project is expected to have these questions answered.
 
 # **BUSINESS ASSUMPTIONS**
 - **estimated_salary** will be considered as annual salary, the value 11.50 must be checked it may be an input error.
-- 
+- Imbalanced dataset, must be balanced to get a best performance.
 
 # *MIND MAP*
 
@@ -179,6 +179,27 @@ Creation of variables (features) relevant to solving the problem
    - If offered $50 coupon to 200, it's possible to convert $3,752,242.00 from churn clients.
    - If offered $28.6 coupon to 350, it's possible to convert $9,380,604.00 from churn clients.
    - If offered $16.6 coupon to 600, it's possible to convert $11,256,724.70 from churn clients.
+
+The bank is losing $6727686.22 in this dataframe because of the churn
+
+
+
+The return of all clients in this dataframe are: $33355060.65
+
+Using the knapsack approach with an incentive list with coupons of $200, $100 and $50 depending of the probability to client's churn can give:
+
+Recovered Revenue: $2201386.62
+
+Churn Loss Recovered: 32.72%
+
+Investment: $10000
+
+Profit: $2191386.62
+
+ROI: 21913.87%
+
+Potential clients recovered with the model: 133 clients
+
 
 # **BUSINESS SOLUTION**
 
