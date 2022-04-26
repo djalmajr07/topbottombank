@@ -25,6 +25,7 @@ As a result for this project is expected to have these questions answered.
 # **BUSINESS ASSUMPTIONS**
 - **estimated_salary** will be considered as annual salary, the value 11.50 must be checked it may be an input error.
 - Imbalanced dataset, must be balanced to get a best performance.
+- Due the lack of data, to calculate monthly churn the original dataset with lenth of 10k clients was divided by 12.
 
 # *MIND MAP*
 
@@ -142,6 +143,21 @@ Creation of variables (features) relevant to solving the problem
 
 
 # **TOP 3 INSIGHTS**
+
+### H2. Spain has the largest number of credit cards in the database.
+**False** Spain has the lowest number of cards with 2477
+**Note:** People who have a credit card give more churn
+![h2](https://user-images.githubusercontent.com/85264359/165285138-4093e44d-5496-47c3-8807-5250f1deecce.png)
+
+
+### H3. The female audience has a higher score than the male audience.
+**False** Men and Women on average have the same score.
+![h3](https://user-images.githubusercontent.com/85264359/165285207-8cf722a2-1cf0-4a1b-aaf0-51f41de8041e.png)
+
+
+### H4. Men have more money than women in the bank.
+**True** Men have more money in the bank than women and give less churn too.
+![h4](https://user-images.githubusercontent.com/85264359/165285251-2a422540-7242-408e-baab-be4a52c9bd4f.png)
 
 
 # **BUSINESS RESULTS**
