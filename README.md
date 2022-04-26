@@ -276,8 +276,7 @@ Considering **42% of the base**(3186 customers) according tothe chart, it's poss
 
 
 # **CONCLUSIONS**
-By applying LTR(learn to rank), which consists in rank the base in most prone clients to churn, it was possible to analyse their range and pass some option to business team healping them to decide in which scenario it's the best to offer an coupon and try to recover the client and of course understand better how their clients behave when tend to leave the bank.
-
+By applying LTR(learn to rank), which consists in rank the base in most prone clients to churn, it was possible to analyse their range and pass some options to business team act helping them to decide in which scenario it's the best to offer an coupon and try to recover the client and of course understand better how their clients behave when tend to leave the bank.
 
 
 # **LESSONS LEARNED**
@@ -289,6 +288,7 @@ By applying LTR(learn to rank), which consists in rank the base in most prone cl
 # **NEXT STEPS**
 - Get more data.
 - Combine different features.
+- Test different embbedings and encodings.
 - Work with more budget in an attempt to get back customers.
 - Align with business team with range od probability of churn, they want to work with.
 - Add analysis to understand if the churn occurences are diferent over clients with expected salary above and below the mean.
