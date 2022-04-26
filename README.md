@@ -1,8 +1,13 @@
 # **BUSINESS UNDERSTANDING**
 
+**Obs: To see the images in better quality please click on them, tks.**
+
 ## **COMPANY NAME?**
 
 `Top Bottom Bank`
+
+![image](https://user-images.githubusercontent.com/85264359/165324743-55ff8483-b15f-4857-87fd-a99a695016c0.png)
+
 
 ## **WHAT IS THE BUSINESS MODEL?**
 
@@ -247,6 +252,11 @@ Considering **42% of the base**(3186 customers) according tothe chart, it's poss
 # **BUSINESS SOLUTION**
  
 **Google Sheets available to business team insert data and get prediction**
+![image](https://user-images.githubusercontent.com/85264359/165323424-b36cfe69-8ab7-4ddb-8d6f-e1f2e42bf523.png)
+
+
+**Clients Ranked accoding to their propensity score to leave the bank**
+![image](https://user-images.githubusercontent.com/85264359/165323559-8770d0fd-2d08-4916-8227-cd60cb6d51fe.png)
 
 
 
@@ -254,7 +264,15 @@ Considering **42% of the base**(3186 customers) according tothe chart, it's poss
 ![image](https://user-images.githubusercontent.com/85264359/165316902-00ae66c0-c5b5-4fe7-90a0-a4fcf3720f39.png)
 
 
+**MLFlow with models trained and saved**
+![image](https://user-images.githubusercontent.com/85264359/165322268-f2cf5030-c064-4653-8f33-1142d9123ce3.png)
 
+**MLFlow registration of catboost pre-deploy**
+![image](https://user-images.githubusercontent.com/85264359/165322712-15bdd166-2386-422a-bfdf-36c55ace4cca.png)
+
+
+**MLFlow catboost deployed, stage in production**
+![image](https://user-images.githubusercontent.com/85264359/165322842-3688938a-e82f-4d9f-a7ea-4667337f4366.png)
 
 
 # **CONCLUSIONS**
