@@ -278,6 +278,20 @@ Considering **42% of the base**(3186 customers) according tothe chart, it's poss
 # **CONCLUSIONS**
 By applying LTR(learn to rank), which consists in rank the base in most prone clients to churn, it was possible to analyse their range and pass some options to business team act helping them to decide in which scenario it's the best to offer an coupon and try to recover the client and of course understand better how their clients behave when tend to leave the bank.
 
+# Technologies
+
+- Jupyter;
+- VSCode;
+- Mlflow;
+- Google Scripts;
+- Docker;
+- Python.
+ 
+# Deployment into production
+- Back end: Heroku, Google Scripts ;
+- Front end web: Google Sheets;
+- Database: kaggle csv file.
+
 
 # **LESSONS LEARNED**
 - Register all models on MLFlow
@@ -292,3 +306,12 @@ By applying LTR(learn to rank), which consists in rank the base in most prone cl
 - Work with more budget in an attempt to get back customers.
 - Align with business team with range od probability of churn, they want to work with.
 - Add analysis to understand if the churn occurences are diferent over clients with expected salary above and below the mean.
+
+
+# Author
+
+Djalma Luiz da Silva Junior
+
+
+
+[<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/djalmajunior07)
