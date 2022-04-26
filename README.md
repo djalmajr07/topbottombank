@@ -29,7 +29,9 @@ As a result for this project is expected to have these questions answered.
 
 # *MIND MAP*
 
-![2022-02-03_07-39](https://user-images.githubusercontent.com/85264359/164578871-a73c9256-c26e-431c-9377-67c40ab8a1c7.png)
+<!-- ![2022-02-03_07-39](https://user-images.githubusercontent.com/85264359/164578871-a73c9256-c26e-431c-9377-67c40ab8a1c7.png) -->
+![image](https://user-images.githubusercontent.com/85264359/165290051-055883e3-728c-4773-8085-2b45ea0d0980.png)
+
 
 ### **Dataset Description**
 
@@ -147,18 +149,64 @@ Creation of variables (features) relevant to solving the problem
 ### H2. Spain has the largest number of credit cards in the database.
 **False** Spain has the lowest number of cards with 2477
 **Note:** People who have a credit card give more churn
-![h2](https://user-images.githubusercontent.com/85264359/165285138-4093e44d-5496-47c3-8807-5250f1deecce.png)
-
+![image](https://user-images.githubusercontent.com/85264359/165285562-eae80212-9ff5-4304-947b-95f13d4f9494.png)
 
 ### H3. The female audience has a higher score than the male audience.
 **False** Men and Women on average have the same score.
-![h3](https://user-images.githubusercontent.com/85264359/165285207-8cf722a2-1cf0-4a1b-aaf0-51f41de8041e.png)
-
+![image](https://user-images.githubusercontent.com/85264359/165285640-b8feed09-efc8-49ca-b044-f88441e1c942.png)
 
 ### H4. Men have more money than women in the bank.
 **True** Men have more money in the bank than women and give less churn too.
-![h4](https://user-images.githubusercontent.com/85264359/165285251-2a422540-7242-408e-baab-be4a52c9bd4f.png)
+![image](https://user-images.githubusercontent.com/85264359/165285705-ed34577c-455f-4c1a-a985-dd94da418b03.png)
 
+
+# **MACHINE LEARNING APPLIED**
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- SVM
+- KNN
+- Naive Bayes
+- XGBoost
+- Catboost
+
+# Machine Learning Model Performance
+
+**Single Performance**
+
+| Model Name | Accuracy    | Precision      | Recall |
+|-----------|---------|-----------|---------|
+|  Catboost  | 0.91 | 0.94   | 0.88 |
+|  XGBoost 	  | 0.90 | 0.93   | 0.88 |
+|  Naive Bayes  | 0.73 | 0.73	   | 0.74 |
+|  KNN   | 0.81 | 0.80   | 0.83 |
+|  SVM 	  | 0.77 | 0.79   | 0.73 |
+|  Random Forest | 0.88 | 0.89   | 0.87 |
+|  Decision Tree  | 0.84 | 0.84   | 0.85 |
+|  Logistic Regression  | 0.72 | 0.71	   | 0.73 |
+
+# Roc Curve of all models
+Analysing these curves it's pretty simple, the algorithm which have the curve nearest to Y-axis up left corner is the one with the best performance, here we can spot at least 3 easily: Catboost, Random Forest and Xgboost. Even though cat and xgb have a similar graph, catboost has a subtle higher performance in classify the churn and not churn classes, which result in 20% of the base reaching 96% of most likely clients prone to recieve a possible offer.
+
+![image](https://user-images.githubusercontent.com/85264359/165304339-a661d8fd-7738-4f40-a10f-dac9927ce5c0.png)
+
+
+# Confusion Matrix
+Here the confusion matrix shows how the algorithms performed on classification of churn and not churn. Catboost is superior than the others.
+![image](https://user-images.githubusercontent.com/85264359/165304506-51517ba6-298f-48fe-bcce-a72d8f69a821.png)
+
+
+# Model performance on business values
+It is now possible to analyze the metrics and compare the difference in performance between the current model used by the company (**Random Model**) and the model proposed by me.
+
+Considering **42% of the base**(3186 customers) according to the chart it's possible to reach **80% of churn custumers**
+![image](https://user-images.githubusercontent.com/85264359/165289023-acdc7707-798f-4a9c-9e68-cd802b907985.png)
+
+Considering **42% of the base**(3186 customers) according tothe chart, it's possible to perform almost 2 times better than a baseline model
+- The lift curve uses the returned probability of a classification model to measure how the model is performing.
+- The highest probability appear on the left of the graph, usually along with the highest Lift scores.
+- The greater the area between the lift curve and the baseline, the better the model.
+![image](https://user-images.githubusercontent.com/85264359/165289131-fb746505-4adc-40b2-859e-2f60dc64d226.png)
 
 # **BUSINESS RESULTS**
 
@@ -192,39 +240,37 @@ Creation of variables (features) relevant to solving the problem
 5. What is the bank's profit with this customer?
    - On average the amount the bank earns is $18,761.21 by clients.
 
-   - If offered $50 coupon to 200, it's possible to convert $3,752,242.00 from churn clients.
-   - If offered $28.6 coupon to 350, it's possible to convert $9,380,604.00 from churn clients.
+   - If offered $50.0 coupon to 200, it's possible to convert $3,752,242.00  from churn clients.
+   - If offered $28.6 coupon to 350, it's possible to convert $9,380,604.00  from churn clients.
    - If offered $16.6 coupon to 600, it's possible to convert $11,256,724.70 from churn clients.
 
-The bank is losing $6727686.22 in this dataframe because of the churn
-
-
-
-The return of all clients in this dataframe are: $33355060.65
-
-Using the knapsack approach with an incentive list with coupons of $200, $100 and $50 depending of the probability to client's churn can give:
-
-Recovered Revenue: $2201386.62
-
-Churn Loss Recovered: 32.72%
-
-Investment: $10000
-
-Profit: $2191386.62
-
-ROI: 21913.87%
-
-Potential clients recovered with the model: 133 clients
-
-
 # **BUSINESS SOLUTION**
+ 
+**Google Sheets available to business team insert data and get prediction**
+
+
 
 **The following image explains the deployment architecture used to solve this problem**
+![image](https://user-images.githubusercontent.com/85264359/165316902-00ae66c0-c5b5-4fe7-90a0-a4fcf3720f39.png)
+
+
+
 
 
 # **CONCLUSIONS**
+By applying LTR(learn to rank), which consists in rank the base in most prone clients to churn, it was possible to analyse their range and pass some option to business team healping them to decide in which scenario it's the best to offer an coupon and try to recover the client and of course understand better how their clients behave when tend to leave the bank.
+
 
 
 # **LESSONS LEARNED**
+- Register all models on MLFlow
+- Shap method
+- Wrapper method
+- Learned a new model: Catboost
 
-
+# **NEXT STEPS**
+- Get more data.
+- Combine different features.
+- Work with more budget in an attempt to get back customers.
+- Align with business team with range od probability of churn, they want to work with.
+- Add analysis to understand if the churn occurences are diferent over clients with expected salary above and below the mean.
