@@ -3,7 +3,7 @@ import pandas   as pd
 from flask      import Flask, request, Response
 from get.ChurnPred import ChurnScore
 
-model=pickle.load(open('/home/tc0019/DS/topbottombank/parameter/catboost_cv1.pkl', 'rb'))
+model=pickle.load(open('/usr/src/topbottombank/src/model/catboost_cv1.pkl', 'rb'))
 
 
 app=Flask(__name__)
@@ -35,10 +35,10 @@ def getpred():
         df2=pipeline.feature_engeneering(df1)
 
         # data preparation
-        df5=pipeline.data_preparation(df2)
+        df3=pipeline.data_preparation(df2)
 
         # prediction  
-        df_response=pipeline.get_predictions(model,df5)
+        df_response=pipeline.get_predictions(model,df3)
 
         return df_response
     else:
@@ -46,4 +46,5 @@ def getpred():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
+    app.run('0.0.0.0', port=5000)
+    # app.run('0.0.0.0', port=5000, debug=True)
