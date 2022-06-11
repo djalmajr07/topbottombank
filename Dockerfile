@@ -18,4 +18,4 @@ RUN python -m pip install -r requirements.txt
 # Copying src code to Container
 COPY . /usr/src/topbottombank
 
-CMD python main.py
+CMD python /usr/src/topbottombank/src/main.py
