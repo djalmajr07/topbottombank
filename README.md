@@ -234,6 +234,7 @@ Considering **42% of the base**(3186 customers) according tothe chart, it's poss
 4. What is the model performance in find churn clients?
 
     - With a  sample of 1593 customers, this model can classify correctly 1496 representing 88% of acertiveness.
+<<<<<<< HEAD
 
                         precision    recall  f1-score   support
 
@@ -263,6 +264,37 @@ Considering **42% of the base**(3186 customers) according tothe chart, it's poss
 
         Scenario analysis:
 
+=======
+
+                        precision    recall  f1-score   support
+
+           0                  0.89      0.95      0.92      1593
+           1                  0.74      0.52      0.61       407
+
+           accuracy                               0.87      2000
+
+           macro avg          0.82      0.74      0.77      2000
+
+           weighted avg       0.86      0.87    ->0.86<-    2000
+
+
+
+
+5. What is the bank profit if the recovery works as planed?
+   - Simulation: **$25** coupon
+
+        With a budget of $10.000,00, the **top 400 clients with the highest probabilities** would receive the coupon
+
+        Of the top 400 clients, ***65%*** of them were **True Churns** and ***35%*** were **False Churns**
+
+        Financial results:
+
+        - If **all True Churn clients** were recovered - *Potential recovery*: **$1.049.386,00**
+        - **False Churn** clients - *Waste*: **$3.500,00**
+
+        Scenario analysis:
+
+>>>>>>> 819274d28f9bfb921b17f4096ff55d9efc9e4659
         - *Pessimistic*: **$419.754,00** recovered
         - *Realistic*: **$524.693,00** recovered
         - *Optimistic*: **$629.632,00** recovered
