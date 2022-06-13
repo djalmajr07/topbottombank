@@ -22,10 +22,12 @@ The company's main product is a bank account, in which the customer can deposit 
 According to TopBank's Analytics team, each customer who has this bank account returns a monetary amount of 15% of their estimated salary amount, if it is less than average, and 20% if this salary is greater than average, during the current period of your account. This amount is calculated annually.
 
 As a result for this project is expected to have these questions answered.
-* *What is the company's current Churn rate?*
-* *How does the churn rate vary by month?*
-* *What is the expected return in terms of revenue, if the company uses its model to avoid churn?*
-* *How does the model perform in classifying customers as churns?*
+
+1. What is the company's current churn rate?
+2. How the churn rate vary by monthly?
+3. What is the expected return in terms of revenue if the company uses this model to avoid churn?
+4. What is the model performance in find churn clients?
+5. What is the bank profit if the recovery works as planed?
 
 # **BUSINESS ASSUMPTIONS**
 - **estimated_salary** will be considered as annual salary, the value 11.50 must be checked it may be an input error.
@@ -183,15 +185,9 @@ Creation of variables (features) relevant to solving the problem
 ![image](https://user-images.githubusercontent.com/85264359/173262089-63c64fc9-a2f2-4280-9c50-00982380fee3.png)
 
 # Roc Curve of all models
-Analysing these curves it's pretty simple, the algorithm which have the curve nearest to Y-axis up left corner is the one with the best performance, here we can spot at least 3 easily: Catboost, Random Forest and Xgboost. Even though cat and xgb have a similar graph, catboost has a subtle higher performance in classify the churn and not churn classes, which result in 20% of the base reaching 96% of most likely clients prone to recieve a possible offer.
+Analysing these curves it's pretty simple, the algorithm which have the curve nearest to Y-axis up left corner is the one with the best performance, here we can spot at least 3 easily: Catboost, Random Forest and Xgboost. Even though they have a similar graph, catboost has a better Area Under the Curve.  
 
-1. What is the company's current churn rate?
-2. How the churn rate vary by monthly?
-3. What is the expected return in terms of revenue if the company uses this model to avoid churn?
-4. What is the model performance in find churn clients?
-5. What is the bank profit if the recovery works as planed?
-
-
+![model_roc_curves](https://user-images.githubusercontent.com/85264359/173262878-26843f59-b8fa-4570-96b6-ad89d60ec64c.png)
 
 # Model performance on business values
 It is now possible to analyze the metrics and compare the difference in performance between the current model used by the company (**Random Model**) and the model proposed by me.
