@@ -234,7 +234,6 @@ Considering **42% of the base**(3186 customers) according tothe chart, it's poss
 4. What is the model performance in find churn clients?
 
     - With a  sample of 1593 customers, this model can classify correctly 1496 representing 88% of acertiveness.
-<<<<<<< HEAD
 
                         precision    recall  f1-score   support
 
