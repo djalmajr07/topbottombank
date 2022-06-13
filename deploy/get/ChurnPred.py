@@ -9,18 +9,20 @@ class ChurnScore(object):
     def __init__(self):
     
         # model load
-        self.model=pickle.load(open('model/catboost_cv1.pkl', 'rb'))
+        self.model=pickle.load(open('model/catboost_cv_fv.pkl', 'rb'))
 
         #parameters load
-        self.age                    =pickle.load( open('parameter/age_scaler.pkl', 'rb' ))
-        self.credit_score           =pickle.load( open('parameter/credit_score_scaler.pkl', 'rb' ))
-        self.estimated_salary       =pickle.load( open('parameter/estimated_salary_scaler.pkl', 'rb' ))
-        self.tenure                 =pickle.load( open('parameter/tenure_scaler.pk1', 'rb'))
-        self.balance                =pickle.load( open('parameter/balance_scaler.pk1', 'rb'))
-        self.num_of_products        =pickle.load( open('parameter/num_of_products_scaler.pk1', 'rb'))
-        self.balance_by_age         =pickle.load( open('parameter/balance_by_age_scaler.pk1', 'rb'))
-        self.balance_by_num_of_prod =pickle.load( open('parameter/balance_by_num_of_prod_scaler.pk1', 'rb'))
-        self.num_of_prod_by_age     =pickle.load( open('parameter/num_of_prod_by_age_scaler.pk1', 'rb'))
+        self.age                                    =pickle.load( open('parameter/age_scaler.pkl', 'rb' ))
+        self.balance                                =pickle.load( open('parameter/balance_scaler.pk1', 'rb'))
+        self.balance_by_age                         =pickle.load( open('parameter/balance_by_age_scaler.pk1', 'rb'))
+        self.balance_by_num_of_prod                 =pickle.load( open('parameter/balance_by_num_of_prod_scaler.pk1', 'rb'))
+        self.credit_score_by_age                    =pickle.load( open('parameter/credit_score_by_age_scaler.pk1', 'rb' ))
+        self.credit_score                           =pickle.load( open('parameter/credit_score.pkl', 'rb' ))
+        self.estimated_salary_by_age                =pickle.load( open('parameter/estimated_salary_by_age_scaler.pk1', 'rb' ))
+        self.estimated_salary                       =pickle.load( open('parameter/estimated_salary_scaler.pkl', 'rb' ))
+        self.num_of_prod_by_age                     =pickle.load( open('parameter/num_of_prod_by_age_scaler.pk1', 'rb'))
+        self.num_of_products                        =pickle.load( open('parameter/num_of_products_scaler.pk1', 'rb'))
+        self.tenure                                 =pickle.load( open('parameter/tenure_scaler.pk1', 'rb'))
         
 
     def data_cleaning(self, df_raw):
@@ -32,14 +34,12 @@ class ChurnScore(object):
         snakecase = lambda x: inflection.underscore(x)
         cols_new = list(map(snakecase, cols_old))
         df_raw.columns = cols_new
-        # self.df1 = df_raw
+        
 
         return df_raw
 
     def feature_engeneering(self, df1):
-        # df1['num_of_products'] = df1['num_of_products'].astype(float)
-        # df1['age'] = df1['age'].astype(float)
-        # df1['balance'] = df1['balance'].astype(float)
+        
 
         df1['num_of_prod_by_age']=df1['num_of_products']/df1['age']
         df1['balance_by_num_of_prod']=df1['balance']/df1['num_of_products']
@@ -60,12 +60,6 @@ class ChurnScore(object):
         df2.loc[df2['gender']=='Female', 'gender_Female']=1 
         df2.loc[df2['gender']=='Male', 'gender_Male']=1 
 
-        df2.loc[df2['has_cr_card']==0, 'has_cr_card_0']=1 
-        df2.loc[df2['has_cr_card']==1, 'has_cr_card_1']=1 
-
-        df2.loc[df2['is_active_member']==0, 'is_active_member_0']=1 
-        df2.loc[df2['is_active_member']==1, 'is_active_member_1']=1 
-
         df2=df2.fillna(0)
 
         df2['age']=self.age.transform(df2[['age']].values)
@@ -79,9 +73,8 @@ class ChurnScore(object):
         df2['num_of_prod_by_age'] = self.num_of_prod_by_age.transform(df2[['num_of_prod_by_age']].values)
 
 
-        
-        important_cols = ['credit_score', 'age', 'tenure', 'balance', 'num_of_products','estimated_salary', 'balance_by_age', 'num_of_prod_by_age','balance_by_num_of_prod', 'geography_Germany',
-                          'gender_Female','gender_Male','is_active_member_0', 'is_active_member_1']
+        important_cols = ['credit_score',	'age', 'tenure', 'balance', 'num_of_products', 'is_active_member', 'estimated_salary', 'balance_by_age', 'num_of_prod_by_age','balance_by_num_of_prod', 'geography_Germany',
+                          'gender_Female','gender_Male']
 
         return df2[important_cols]
 

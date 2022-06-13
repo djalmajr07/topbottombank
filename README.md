@@ -1,4 +1,4 @@
-# **BUSINESS UNDERSTANDING**
+Curve# **BUSINESS UNDERSTANDING**
 
 **Obs: To see the images in better quality please click on them, tks.**
 
@@ -22,14 +22,16 @@ The company's main product is a bank account, in which the customer can deposit 
 According to TopBank's Analytics team, each customer who has this bank account returns a monetary amount of 15% of their estimated salary amount, if it is less than average, and 20% if this salary is greater than average, during the current period of your account. This amount is calculated annually.
 
 As a result for this project is expected to have these questions answered.
-* *What is the company's current Churn rate?*
-* *How does the churn rate vary by month?*
-* *What is the expected return in terms of revenue, if the company uses its model to avoid churn?*
-* *How does the model perform in classifying customers as churns?*
+
+1. What is the company's current churn rate?
+2. How the churn rate vary by monthly?
+3. What is the expected return in terms of revenue if the company uses this model to avoid churn?
+4. What is the model performance in find churn clients?
+5. What is the bank profit if the recovery works as planed?
 
 # **BUSINESS ASSUMPTIONS**
 - **estimated_salary** will be considered as annual salary, the value 11.50 must be checked it may be an input error.
-- Imbalanced dataset, must be balanced to get a best performance.
+- To deal with imbalanced dataset I'm considering to give priority to models which use bagging.
 - Due the lack of data, to calculate monthly churn the original dataset with lenth of 10k clients was divided by 12.
 
 # *MIND MAP*
@@ -70,10 +72,11 @@ https://www.kaggle.com/datasets/mervetorkan/churndataset
 2. Customers ceasing to buy after a certain period.
 
 ## Output
-1. What is the company's current Churn rate?
-2. How does the churn rate vary by month?
-3. What is the expected return in terms of revenue, if the company uses its model to avoid churn?
-4. How does the model perform in classifying customers as churns?
+1. What is the company's current churn rate?
+2. How the churn rate vary by monthly?
+3. What is the expected return in terms of revenue if the company uses this model to avoid churn?
+4. What is the model performance in find churn clients?
+5. What is the bank profit if the recovery works as planed?
 
 
 ## Tasks
@@ -179,75 +182,92 @@ Creation of variables (features) relevant to solving the problem
 
 **Single Performance**
 
-| Model Name | Accuracy    | Precision      | Recall |
-|-----------|---------|-----------|---------|
-|  Catboost  | 0.91 | 0.94   | 0.88 |
-|  XGBoost 	  | 0.90 | 0.93   | 0.88 |
-|  Naive Bayes  | 0.73 | 0.73	   | 0.74 |
-|  KNN   | 0.81 | 0.80   | 0.83 |
-|  SVM 	  | 0.77 | 0.79   | 0.73 |
-|  Random Forest | 0.88 | 0.89   | 0.87 |
-|  Decision Tree  | 0.84 | 0.84   | 0.85 |
-|  Logistic Regression  | 0.72 | 0.71	   | 0.73 |
+![image](https://user-images.githubusercontent.com/85264359/173262089-63c64fc9-a2f2-4280-9c50-00982380fee3.png)
 
 # Roc Curve of all models
-Analysing these curves it's pretty simple, the algorithm which have the curve nearest to Y-axis up left corner is the one with the best performance, here we can spot at least 3 easily: Catboost, Random Forest and Xgboost. Even though cat and xgb have a similar graph, catboost has a subtle higher performance in classify the churn and not churn classes, which result in 20% of the base reaching 96% of most likely clients prone to recieve a possible offer.
+Analysing these curves it's pretty simple, the algorithm which have the curve nearest to Y-axis up left corner is the one with the best performance, here we can spot at least 3 easily: Catboost, Random Forest and Xgboost. Even though they have a similar graph, catboost has a better Area Under the Curve.  
 
-![image](https://user-images.githubusercontent.com/85264359/165304339-a661d8fd-7738-4f40-a10f-dac9927ce5c0.png)
-
-
-# Confusion Matrix
-Here the confusion matrix shows how the algorithms performed on classification of churn and not churn. Catboost is superior than the others.
-![image](https://user-images.githubusercontent.com/85264359/165304506-51517ba6-298f-48fe-bcce-a72d8f69a821.png)
-
+![model_roc_curves](https://user-images.githubusercontent.com/85264359/173262878-26843f59-b8fa-4570-96b6-ad89d60ec64c.png)
 
 # Model performance on business values
 It is now possible to analyze the metrics and compare the difference in performance between the current model used by the company (**Random Model**) and the model proposed by me.
 
-Considering **42% of the base**(3186 customers) according to the chart it's possible to reach **80% of churn custumers**
-![image](https://user-images.githubusercontent.com/85264359/165289023-acdc7707-798f-4a9c-9e68-cd802b907985.png)
+Considering **42% of the base**(3186 customers) according to the chart it's possible to reach **around 83% of churn custumers**
+![image](https://user-images.githubusercontent.com/85264359/173261856-4533e633-0914-4de0-b4fb-7fd3e7d4aef5.png)
 
-Considering **42% of the base**(3186 customers) according tothe chart, it's possible to perform almost 2 times better than a baseline model
+Considering **42% of the base**(3186 customers) according tothe chart, it's possible to perform 2+ times better than a baseline model
 - The lift curve uses the returned probability of a classification model to measure how the model is performing.
 - The highest probability appear on the left of the graph, usually along with the highest Lift scores.
 - The greater the area between the lift curve and the baseline, the better the model.
-![image](https://user-images.githubusercontent.com/85264359/165289131-fb746505-4adc-40b2-859e-2f60dc64d226.png)
+![image](https://user-images.githubusercontent.com/85264359/173261882-8a8ab6d0-cd6c-4ed5-aad2-8f4a1fb11693.png)
 
 # **BUSINESS RESULTS**
 
 **Answering the proposed business questions**
 
-1. What is the company's current Churn rate?
-    - The base has 10k customers and 2037 of them exited the bank, it represents 20.37% of churn.
+## Answers about the case
 
 
 
-2. How does the churn rate vary by month?
+1. What is the company's current churn rate?
+    - The base has 10k customers and 2037 of them exited the bank, it represents 20,37% of churn.
+
+
+
+2. How the churn rate vary by monthly?
     - I made an assumption about this dataset, I divided the hole 10k clients by 12 and considered them the clients of each month of the year.
     - It goes between 17-22%
 
 
 
-3. What is the expected return in terms of revenue, if the company uses its model to avoid churn?
-    - average of how much the bank invoices per customer and decide how much to give as a coupon, offer 3 strategies.
+3. What is the expected return in terms of revenue if the company uses this model to avoid churn?
+    - With a budget of $10.000 and coupons of $25 the expected ROI is **4198%**
+
+        To calculate the Return of Investment (ROI), we'll use the **Mean Return** of all the Scenarios values. The ROI for each of the three options are:
+
+        - **$200** ROI: **1388%**
+        - **$100** ROI: **2299%**
+        - **$50** ROI: **3225%**
+        - **$25** ROI: **4198%**
+
+
+4. What is the model performance in find churn clients?
+
+    - With a  sample of 1593 customers, this model can classify correctly 1496 representing 88% of acertiveness.
+
+                        precision    recall  f1-score   support
+
+           0                  0.89      0.95      0.92      1593
+           1                  0.74      0.52      0.61       407
+
+           accuracy                               0.87      2000
+
+           macro avg          0.82      0.74      0.77      2000
+
+           weighted avg       0.86      0.87    ->0.86<-    2000
 
 
 
-4. How does the model perform in classifying customers as churns?
 
-    - With a sample of 1593 customers, this model can correctly classify 1496 representing 88% of assertiveness.
+5. What is the bank profit if the recovery works as planed?
+   - Simulation: **$25** coupon
 
-     CatBoost Accuracy = 0.91
-           
-           
-     ![image](https://user-images.githubusercontent.com/85264359/164581465-7e044927-e5d1-4c4d-bd2d-17502459efdd.png)
+        With a budget of $10.000,00, the **top 400 clients with the highest probabilities** would receive the coupon
 
-5. What is the bank's profit with this customer?
-   - On average the amount the bank earns is $18,761.21 by clients.
+        Of the top 400 clients, ***65%*** of them were **True Churns** and ***35%*** were **False Churns**
 
-   - If offered $50.0 coupon to 200, it's possible to convert $3,752,242.00  from churn clients.
-   - If offered $28.6 coupon to 350, it's possible to convert $9,380,604.00  from churn clients.
-   - If offered $16.6 coupon to 600, it's possible to convert $11,256,724.70 from churn clients.
+        Financial results:
+
+        - If **all True Churn clients** were recovered - *Potential recovery*: **$1.049.386,00**
+        - **False Churn** clients - *Waste*: **$3.500,00**
+
+        Scenario analysis:
+
+        - *Pessimistic*: **$419.754,00** recovered
+        - *Realistic*: **$524.693,00** recovered
+        - *Optimistic*: **$629.632,00** recovered
+        - *Mean of scenarios*: **$419.754,00** recovered
+
 
 # **BUSINESS SOLUTION**
  
@@ -265,7 +285,7 @@ Considering **42% of the base**(3186 customers) according tothe chart, it's poss
 
 
 **MLFlow with models trained and saved**
-![image](https://user-images.githubusercontent.com/85264359/165322268-f2cf5030-c064-4653-8f33-1142d9123ce3.png)
+![image](https://user-images.githubusercontent.com/85264359/173261433-35becf27-c03f-463d-bac8-c2cb86f1fef6.png)
 
 **MLFlow registration of catboost pre-deploy**
 ![image](https://user-images.githubusercontent.com/85264359/165322712-15bdd166-2386-422a-bfdf-36c55ace4cca.png)
@@ -315,3 +335,4 @@ Djalma Luiz da Silva Junior
 
 
 [<img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/djalmajunior07)
+
