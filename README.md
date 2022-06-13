@@ -1,4 +1,4 @@
-Curve# **BUSINESS UNDERSTANDING**
+# **BUSINESS UNDERSTANDING**
 
 **Obs: To see the images in better quality please click on them, tks.**
 
