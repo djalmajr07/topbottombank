@@ -11,7 +11,7 @@
 
 ## **WHAT IS THE BUSINESS MODEL?**
 
-TopBank is a large banking company. It operates mainly in European countries offering financial products, from bank accounts to investments, including some types of insurance and investment products.
+Top Bottom Bank is a large banking company. It operates mainly in European countries offering financial products, from bank accounts to investments, including some types of insurance and investment products.
 
 The company's business model is of the service type, that is, it sells banking services to its customers through physical branches and an online portal.
 
