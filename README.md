@@ -19,6 +19,12 @@ The company's main product is a bank account, in which the customer can deposit 
 
 ## **WHAT CHALLENGE DOES THIS PROJECT AIM TO OVERCOME?**
 
+In recent months, the Analytics team has noticed that the rate of customers canceling their accounts and leaving the
+bank, reached unprecedented numbers in the company. Concerned about the increase in this rate, the team planned a
+action plan to reduce customer evasion rate.
+
+
+
 According to TopBank's Analytics team, each customer who has this bank account returns a monetary amount of 15% of their estimated salary amount, if it is less than average, and 20% if this salary is greater than average, during the current period of your account. This amount is calculated annually.
 
 As a result for this project is expected to have these questions answered.
